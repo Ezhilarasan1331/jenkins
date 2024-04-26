@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('Clone Repository') {
+      steps {
+        git url: 'https://github.com/Ezhilarasan1331/jenkins.git', branch: 'main'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh './script.sh'  // Your script or build commands
+      }
+    }
+  }
+}
